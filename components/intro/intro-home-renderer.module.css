@@ -1,0 +1,582 @@
+.page {
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(245, 243, 238, 0.98)),
+    #f5f3ee;
+  color: #111111;
+}
+
+.shell {
+  position: relative;
+  max-width: 1780px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem 4rem;
+}
+
+.shell::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(17, 17, 17, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17, 17, 17, 0.025) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 82%);
+}
+
+.header {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.headerLabel {
+  font-family: var(--font-mono), 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.navGrid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.navItem {
+  display: block;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.75);
+  transition: opacity 140ms ease;
+}
+
+.navItem:hover {
+  opacity: 0.62;
+}
+
+.navText {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-mono), 'IBM Plex Mono', monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.navDot {
+  width: 0.95rem;
+  height: 0.95rem;
+  border-radius: 999px;
+  background: #111111;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  padding-top: 1.6rem;
+}
+
+.heroMeta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.eyebrow,
+.sectionEyebrow,
+.metaLabel,
+.roomLabel,
+.processStep,
+.factLabel,
+.timelinePeriod,
+.contactLabel,
+.actionNote {
+  font-family: var(--font-mono), 'IBM Plex Mono', monospace;
+  font-size: 0.76rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.eyebrow,
+.sectionEyebrow,
+.metaLabel,
+.roomLabel,
+.factLabel,
+.timelinePeriod {
+  color: rgba(17, 17, 17, 0.72);
+}
+
+.metaGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 1.5rem;
+  min-width: min(38vw, 440px);
+}
+
+.metaItem {
+  border-top: 1px solid rgba(17, 17, 17, 0.82);
+  padding-top: 0.85rem;
+}
+
+.metaValue {
+  margin-top: 0.85rem;
+  font-family: var(--font-sans), 'IBM Plex Sans', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+.heroHeading {
+  margin-top: 4rem;
+}
+
+.heroRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.15em 0.26em;
+  line-height: 0.84;
+}
+
+.word {
+  display: inline-block;
+  animation: rise-in 520ms ease both;
+}
+
+.heroRow:nth-child(2) .word {
+  animation-delay: 60ms;
+}
+
+.heroRow:nth-child(3) .word {
+  animation-delay: 120ms;
+}
+
+.heroRow:nth-child(4) .word {
+  animation-delay: 180ms;
+}
+
+.wordSerif {
+  font-family: var(--font-display), 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: clamp(2.75rem, 7vw, 5.75rem);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+}
+
+.wordSans {
+  font-family: var(--font-sans), 'IBM Plex Sans', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+  font-size: clamp(2.6rem, 7.3vw, 5.35rem);
+  font-weight: 700;
+  letter-spacing: -0.075em;
+}
+
+.wordMono {
+  font-family: var(--font-mono), 'IBM Plex Mono', monospace;
+}
+
+.heroLower {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1.6rem;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+}
+
+.heroSummary,
+.sectionSummary,
+.bodyCopy,
+.contactNote {
+  font-family: var(--font-sans), 'IBM Plex Sans', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  color: rgba(17, 17, 17, 0.8);
+}
+
+.heroSummary {
+  max-width: 52rem;
+  font-size: 1.12rem;
+}
+
+.chipRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: start;
+  gap: 0.75rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.4rem;
+  padding: 0.58rem 0.85rem;
+  border: 1px solid rgba(17, 17, 17, 0.82);
+  font-family: var(--font-mono), 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.actionRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  grid-column: 1 / -1;
+}
+
+.primaryAction,
+.secondaryAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 3.2rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid #111111;
+  font-family: var(--font-sans), 'IBM Plex Sans', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+  transition:
+    background 140ms ease,
+    color 140ms ease,
+    transform 140ms ease;
+}
+
+.primaryAction {
+  background: #111111;
+  color: #f5f3ee;
+}
+
+.secondaryAction {
+  background: transparent;
+  color: #111111;
+}
+
+.primaryAction:hover,
+.secondaryAction:hover {
+  transform: translateY(-1px);
+}
+
+.secondaryAction:hover {
+  background: #111111;
+  color: #f5f3ee;
+}
+
+.actionNote {
+  opacity: 0.72;
+}
+
+.actionArrow,
+.inlineArrow,
+.contactArrow {
+  width: 0.95rem;
+  height: 0.95rem;
+  flex: 0 0 auto;
+}
+
+.section {
+  margin-top: 6rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid rgba(17, 17, 17, 0.82);
+}
+
+.sectionHeader {
+  max-width: 70rem;
+}
+
+.sectionTitle {
+  margin: 1rem 0 0;
+  font-family: var(--font-display), 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: clamp(2.3rem, 5vw, 4.55rem);
+  line-height: 0.92;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+}
+
+.sectionSummary {
+  margin-top: 1rem;
+  max-width: 54rem;
+}
+
+.manifestoGrid {
+  margin-top: 2rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+}
+
+.quoteBlock {
+  font-family: var(--font-sans), 'IBM Plex Sans', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+  font-size: clamp(2rem, 4.6vw, 4rem);
+  line-height: 0.93;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.copyColumn {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.roomsGrid {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.roomCard,
+.processCard,
+.factCard,
+.timelineRow,
+.contactCard {
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(17, 17, 17, 0.82);
+}
+
+.roomCard {
+  display: grid;
+  gap: 0.95rem;
+  padding: 1.2rem 1.2rem 1.3rem;
+  align-content: start;
+  min-height: 23rem;
+}
+
+.roomTitle,
+.processTitle,
+.timelineTitle {
+  margin: 0;
+  font-family: var(--font-display), 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: clamp(1.55rem, 3vw, 2.5rem);
+  line-height: 0.96;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+
+.noteList {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.noteItem {
+  position: relative;
+  padding-left: 1rem;
+  font-family: var(--font-sans), 'IBM Plex Sans', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+  font-size: 0.94rem;
+  line-height: 1.7;
+  color: rgba(17, 17, 17, 0.74);
+}
+
+.noteItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72rem;
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 999px;
+  background: #111111;
+}
+
+.roomLinks,
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.inlineLink,
+.footerLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono), 'IBM Plex Mono', monospace;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.processGrid {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.processCard {
+  min-height: 15rem;
+  padding: 1rem 1.05rem 1.2rem;
+}
+
+.processStep {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: #111111;
+  color: #f5f3ee;
+  letter-spacing: 0.08em;
+}
+
+.processTitle {
+  margin-top: 1.2rem;
+}
+
+.factGrid {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.factCard {
+  padding: 1rem 1rem 1.15rem;
+}
+
+.factValue {
+  margin-top: 0.9rem;
+  font-family: var(--font-sans), 'IBM Plex Sans', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.timeline {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.timelineRow {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: minmax(130px, 0.22fr) minmax(0, 1fr);
+  padding: 1rem 1rem 1.2rem;
+}
+
+.timelineContent {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contactGrid {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contactCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1rem 1.1rem;
+  transition:
+    background 140ms ease,
+    transform 140ms ease;
+}
+
+.contactCard:hover {
+  transform: translateY(-1px);
+  background: #111111;
+  color: #f5f3ee;
+}
+
+.contactCard:hover .contactNote,
+.contactCard:hover .contactLabel {
+  color: inherit;
+}
+
+.contactLabel {
+  color: rgba(17, 17, 17, 0.78);
+}
+
+.contactNote {
+  margin: 0.55rem 0 0;
+}
+
+.footer {
+  margin-top: 5.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(17, 17, 17, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.footerNote {
+  margin: 0;
+  font-family: var(--font-display), 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: clamp(1.4rem, 3vw, 2.35rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1200px) {
+  .navGrid,
+  .processGrid,
+  .factGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .heroLower,
+  .manifestoGrid,
+  .roomsGrid,
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .shell {
+    padding: 1.2rem 1rem 3rem;
+  }
+
+  .heroMeta,
+  .footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .metaGrid,
+  .navGrid,
+  .processGrid,
+  .factGrid,
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .timelineRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .heroHeading {
+    margin-top: 2.6rem;
+  }
+
+  .heroSummary,
+  .sectionSummary,
+  .bodyCopy,
+  .contactNote {
+    font-size: 0.96rem;
+  }
+}

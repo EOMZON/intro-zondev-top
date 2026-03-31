@@ -1,0 +1,1301 @@
+.page {
+  --paper: #f3f0e7;
+  --paper-strong: #ece7dc;
+  --ink: #090909;
+  --ink-soft: rgba(9, 9, 9, 0.76);
+  --ink-faint: rgba(9, 9, 9, 0.48);
+  --line: rgba(9, 9, 9, 0.12);
+  --line-strong: rgba(9, 9, 9, 0.24);
+  --menu-height: 42px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), transparent 26%),
+    linear-gradient(180deg, #f8f5ef 0%, var(--paper) 45%, #ebe6db 100%);
+  color: var(--ink);
+  font-family:
+    var(--signal-font-sans),
+    "Helvetica Neue",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Noto Sans CJK SC",
+    sans-serif;
+}
+
+.menu,
+.mobileHeader,
+.main,
+.footer {
+  width: min(100% - 24px, 1520px);
+  margin: 0 auto;
+}
+
+.menu {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) 1.4fr;
+  gap: 10px;
+  padding-top: 10px;
+  background: linear-gradient(180deg, rgba(243, 240, 231, 0.95), rgba(243, 240, 231, 0.62) 74%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+.menuButton,
+.footerLink,
+.archiveLink,
+.discoveryLink,
+.actionLink {
+  border-bottom: 1px solid var(--line-strong);
+  text-decoration: none;
+  color: inherit;
+}
+
+.menuButton {
+  display: flex;
+  min-height: var(--menu-height);
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 6px;
+  font-family:
+    var(--signal-font-mono),
+    "IBM Plex Mono",
+    "SFMono-Regular",
+    monospace;
+  font-size: 11px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  transition:
+    padding 140ms ease,
+    border-color 140ms ease;
+}
+
+.menuButton span:last-child {
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+}
+
+.menuButton:hover {
+  padding-left: 12px;
+  border-color: var(--ink);
+}
+
+.menuSocials {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.mobileHeader {
+  display: none;
+}
+
+.main {
+  padding-top: 84px;
+  padding-bottom: 56px;
+}
+
+.preheader {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  padding-top: 20px;
+  padding-bottom: 42px;
+}
+
+.preheaderBlock,
+.preheaderMeta,
+.metaPair,
+.locationItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.preheaderMeta {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.microLabel,
+.microLabelZh,
+.heroEyebrow,
+.sectionEyebrow,
+.caseMetaLabel,
+.signalMetricLabel,
+.signalMetricZh,
+.spotlightMetricLabel,
+.spotlightMetricLabelZh,
+.rulesHeader,
+.recognitionLabel,
+.timelinePeriod,
+.contactLabel,
+.posterLabel {
+  font-family:
+    var(--signal-font-mono),
+    "IBM Plex Mono",
+    monospace;
+  text-transform: uppercase;
+}
+
+.microLabel,
+.metaPair span:first-child,
+.locationItem span:first-child {
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.18em;
+}
+
+.microLabelZh,
+.metaPair span:last-child,
+.locationItem span:last-child {
+  color: var(--ink-faint);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(360px, 0.7fr);
+  gap: 26px;
+  align-items: end;
+}
+
+.wordmarkPanel,
+.showreelCard,
+.spotlightCard,
+.practiceCard,
+.rulesCard,
+.contactCard {
+  border-top: 1px solid var(--line-strong);
+}
+
+.heroEyebrow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+}
+
+.heroEyebrow span:last-child,
+.sectionEyebrow span:last-child {
+  color: var(--ink-faint);
+}
+
+.wordmark {
+  margin-top: 22px;
+}
+
+.wordmarkLine {
+  font-family:
+    var(--signal-font-sans),
+    "Helvetica Neue",
+    sans-serif;
+  font-size: clamp(4.3rem, 11vw, 10.4rem);
+  font-weight: 700;
+  line-height: 0.84;
+  letter-spacing: -0.065em;
+}
+
+.heroSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-bottom: 12px;
+}
+
+.summaryEn,
+.statementEn,
+.sectionTitle,
+.caseTitleEn,
+.excerptStatement,
+.timelineContent h3 {
+  text-wrap: balance;
+}
+
+.summaryEn {
+  font-size: 21px;
+  line-height: 1.08;
+}
+
+.summaryZh,
+.statementZh,
+.sectionTitleZh,
+.caseTitleZh,
+.excerptStatementZh,
+.timelineContent p,
+.sectionBodyZh,
+.spotlightDetailZh,
+.contactSummary p:last-child {
+  margin-top: 8px;
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.subtitleRows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.subtitleRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.subtitleToken {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.subtitleToken span:first-child {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.subtitleToken span:last-child {
+  color: var(--ink-faint);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.statementBox {
+  max-width: 34rem;
+}
+
+.statementEn {
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.showreelSection {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+  gap: 26px;
+  margin-top: 36px;
+}
+
+.showreelCard,
+.spotlightCard,
+.practiceCard,
+.rulesCard,
+.contactCard {
+  padding-top: 14px;
+}
+
+.showreelHead,
+.actionLabel,
+.actionLabelZh,
+.footerNote p:first-child,
+.footerLinks,
+.caseIndex,
+.caseCategory span:first-child,
+.caseMetaLabel span:first-child,
+.caseScopeItem span:first-child,
+.recognitionValue span:first-child,
+.timelinePeriod span:first-child,
+.contactNote span:first-child {
+  font-family:
+    var(--signal-font-mono),
+    "IBM Plex Mono",
+    monospace;
+}
+
+.showreelHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.showreelBody {
+  display: grid;
+  gap: 18px;
+  margin-top: 12px;
+}
+
+.showreelVisual {
+  position: relative;
+  overflow: hidden;
+  min-height: 560px;
+  border: 1px solid rgba(9, 9, 9, 0.22);
+  background:
+    linear-gradient(135deg, #141414 0%, #020202 46%, #1a1a1a 100%);
+}
+
+.showreelVisual::before,
+.showreelVisual::after {
+  content: "";
+  position: absolute;
+  inset: auto;
+  border-radius: 999px;
+  opacity: 0.65;
+  filter: blur(28px);
+}
+
+.showreelVisual::before {
+  top: 48px;
+  right: 62px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.42), transparent 70%);
+  animation: driftA 12s ease-in-out infinite;
+}
+
+.showreelVisual::after {
+  bottom: 46px;
+  left: 38px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(255, 229, 188, 0.28), transparent 72%);
+  animation: driftB 16s ease-in-out infinite;
+}
+
+.signalOrb {
+  position: absolute;
+  inset: 14% 12% auto auto;
+  width: clamp(180px, 20vw, 260px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.7), transparent 18%),
+    radial-gradient(circle at 60% 52%, rgba(255, 255, 255, 0.18), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.02));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 24px 60px rgba(0, 0, 0, 0.3);
+  animation: driftC 14s ease-in-out infinite;
+}
+
+.signalGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 26px;
+  padding-top: 180px;
+}
+
+.signalMetric,
+.spotlightMetric {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 14px 14px 16px;
+  color: #f2eee4;
+}
+
+.signalMetricLabel,
+.spotlightMetricLabel {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+
+.signalMetricZh,
+.spotlightMetricLabelZh,
+.actionLabelZh,
+.posterTitleZh,
+.contactLabel span:last-child,
+.contactNote span:last-child,
+.footerNote p:last-child,
+.footerLink span:last-child {
+  margin-top: 3px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+.signalMetricValue,
+.spotlightMetricValue {
+  margin-top: 12px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.signalMetricValueZh,
+.spotlightMetricValueZh {
+  margin-top: 6px;
+  color: rgba(242, 238, 228, 0.66);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.actionRail {
+  display: grid;
+  gap: 10px;
+}
+
+.actionLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 56px;
+  padding: 0 4px 10px;
+  transition:
+    padding 140ms ease,
+    border-color 140ms ease;
+}
+
+.actionLink:hover,
+.archiveLink:hover,
+.discoveryLink:hover,
+.footerLink:hover {
+  padding-left: 10px;
+  border-color: var(--ink);
+}
+
+.actionLabel,
+.footerLink span:first-child {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.spotlightCard {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sectionEyebrow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 3.1vw, 3.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.sectionTitleZh {
+  max-width: 42rem;
+}
+
+.sectionBody,
+.spotlightDetail,
+.practiceParagraph p:first-child,
+.contactSummary p:first-child {
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.spotlightItems,
+.spotlightMetrics,
+.caseList,
+.recognitionTable,
+.practiceParagraphs,
+.ruleList,
+.timelineList,
+.contactGrid {
+  display: grid;
+}
+
+.spotlightItems {
+  gap: 12px;
+}
+
+.spotlightItem {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.spotlightLabel {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+}
+
+.spotlightLabelZh {
+  margin-top: 4px;
+  color: var(--ink-faint);
+  font-size: 12px;
+}
+
+.spotlightMetrics {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.spotlightMetric {
+  min-height: 100%;
+  border-color: var(--line);
+  background: rgba(255, 255, 255, 0.38);
+  color: var(--ink);
+}
+
+.spotlightMetricLabelZh,
+.spotlightMetricValueZh {
+  color: var(--ink-faint);
+}
+
+.caseStudiesSection,
+.recognitionsSection,
+.timelineSection,
+.contactSection {
+  margin-top: 90px;
+}
+
+.sectionHeading {
+  margin-bottom: 22px;
+}
+
+.caseList {
+  gap: 0;
+}
+
+.caseRow {
+  display: grid;
+  grid-template-columns: 88px 220px minmax(0, 1.2fr) 82px minmax(0, 1.5fr) 260px;
+  gap: 16px;
+  align-items: stretch;
+  min-height: 240px;
+  border-top: 1px solid var(--line-strong);
+  padding: 14px 0;
+  text-decoration: none;
+  color: inherit;
+  transition: background 150ms ease;
+}
+
+.caseRow:last-child {
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.caseRow:hover {
+  background: rgba(255, 255, 255, 0.38);
+}
+
+.caseIndex,
+.caseArrow,
+.caseCategory {
+  padding-top: 4px;
+}
+
+.caseIndex {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+}
+
+.caseCategory {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.caseCategory span:first-child,
+.caseMetaLabel span:first-child {
+  font-size: 11px;
+  line-height: 1.35;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.caseCategory span:last-child,
+.caseMetaLabel span:last-child,
+.caseScopeItem span:last-child,
+.caseMetaItem span:last-child,
+.recognitionLabel span:last-child,
+.recognitionValue span:last-child,
+.timelinePeriod span:last-child {
+  color: var(--ink-faint);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.caseTitleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 18px;
+}
+
+.caseTitleEn {
+  font-family:
+    var(--signal-font-serif),
+    "Cormorant Garamond",
+    "Songti SC",
+    serif;
+  font-size: clamp(2rem, 3.2vw, 4.6rem);
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+}
+
+.caseTitleZh,
+.caseSummaryZh,
+.caseHiringValueZh {
+  margin-top: 0;
+}
+
+.caseArrow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 6px;
+  font-family:
+    var(--signal-font-mono),
+    "IBM Plex Mono",
+    monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.arrowIcon,
+.contactIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.caseMeta {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.caseMetaGroup {
+  display: grid;
+  gap: 8px;
+}
+
+.caseMetaList,
+.caseScopeList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.caseMetaItem,
+.caseScopeItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 120px;
+}
+
+.caseSummaryEn,
+.caseHiringValue {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.caseHiringValue,
+.caseHiringValueZh {
+  color: var(--ink-soft);
+}
+
+.poster {
+  position: relative;
+  overflow: hidden;
+  min-height: 212px;
+  border: 1px solid var(--line);
+}
+
+.poster::before,
+.poster::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.poster::before {
+  background:
+    radial-gradient(circle at 72% 24%, rgba(255, 255, 255, 0.35), transparent 26%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.15), transparent 52%);
+}
+
+.poster::after {
+  opacity: 0;
+  background: linear-gradient(180deg, transparent, rgba(9, 9, 9, 0.28));
+  transition: opacity 180ms ease;
+}
+
+.caseRow:hover .poster::after {
+  opacity: 1;
+}
+
+.posterInner {
+  position: absolute;
+  inset: auto 18px 18px 18px;
+  z-index: 1;
+  color: #fff;
+}
+
+.posterLabel {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+}
+
+.posterTitle {
+  margin-top: 10px;
+  font-family:
+    var(--signal-font-serif),
+    "Cormorant Garamond",
+    serif;
+  font-size: 40px;
+  line-height: 0.94;
+}
+
+.toneGraphite .poster {
+  background:
+    linear-gradient(135deg, #131313 0%, #2c2c2c 50%, #0c0c0c 100%);
+}
+
+.toneLinen .poster {
+  background:
+    linear-gradient(135deg, #6f6b65 0%, #c0b6a2 42%, #4b4741 100%);
+}
+
+.toneOxide .poster {
+  background:
+    linear-gradient(135deg, #2a1712 0%, #8a4a2d 46%, #111 100%);
+}
+
+.toneMist .poster {
+  background:
+    linear-gradient(135deg, #1c2230 0%, #6f7f8e 44%, #c7c5be 100%);
+}
+
+.archiveLink,
+.discoveryLink {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin-top: 18px;
+  min-height: 48px;
+  padding: 0 4px 10px;
+  font-family:
+    var(--signal-font-mono),
+    "IBM Plex Mono",
+    monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.archiveLink div,
+.discoveryLink div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.archiveLink div > :last-child,
+.discoveryLink div > :last-child {
+  color: var(--ink-faint);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.excerptSection {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 26px;
+  margin-top: 90px;
+  border-top: 1px solid var(--line-strong);
+  padding-top: 18px;
+}
+
+.excerptStatement {
+  font-size: clamp(2.8rem, 5vw, 5.8rem);
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+}
+
+.excerptSupport {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 14px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.excerptSupport p:last-child {
+  color: var(--ink-soft);
+}
+
+.recognitionTable {
+  border-top: 1px solid var(--line-strong);
+}
+
+.recognitionRow {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.6fr) minmax(0, 1.4fr);
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.recognitionLabel,
+.recognitionValue {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.recognitionLabel span:first-child,
+.recognitionValue span:first-child {
+  font-size: 11px;
+  line-height: 1.35;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.methodSection {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 28px;
+  margin-top: 90px;
+}
+
+.practiceCard,
+.rulesCard {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.systemNote {
+  border-left: 1px solid var(--line-strong);
+  padding-left: 16px;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.systemNote p:last-child {
+  margin-top: 10px;
+}
+
+.practiceParagraphs {
+  gap: 16px;
+}
+
+.practiceParagraph {
+  display: grid;
+  gap: 8px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.practiceParagraph p:last-child,
+.ruleItem p:last-child,
+.timelineSummary span:last-child {
+  color: var(--ink-soft);
+}
+
+.rulesHeader {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+}
+
+.rulesHeader span:last-child {
+  margin-top: 4px;
+  color: var(--ink-faint);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.ruleList {
+  gap: 14px;
+}
+
+.ruleItem {
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1fr);
+  gap: 10px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.ruleItem p {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.ruleDot {
+  width: 6px;
+  height: 6px;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: var(--ink);
+}
+
+.timelineList {
+  border-top: 1px solid var(--line-strong);
+}
+
+.timelineRow {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.timelinePeriod {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+
+.timelineContent h3 {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.timelineSummary {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.contactSection {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.contactIntro {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contactSummary {
+  display: grid;
+  gap: 10px;
+}
+
+.contactGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.contactCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 170px;
+  text-decoration: none;
+  color: inherit;
+  transition:
+    padding-left 140ms ease,
+    border-color 140ms ease;
+}
+
+.contactCard:hover {
+  padding-left: 10px;
+  border-color: var(--ink);
+}
+
+.contactTop,
+.contactLabel,
+.contactNote {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contactLabel span:first-child {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+}
+
+.contactNote span:first-child {
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.footer {
+  padding-bottom: 26px;
+}
+
+.footerTop {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.footerNote {
+  display: grid;
+  gap: 8px;
+}
+
+.footerNote p:first-child {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.footerLink {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 120px;
+  padding-bottom: 10px;
+}
+
+.marquee {
+  overflow: hidden;
+  margin-top: 26px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  gap: 36px;
+  padding: 12px 0 11px;
+  font-family:
+    var(--signal-font-mono),
+    "IBM Plex Mono",
+    monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  animation: marquee 24s linear infinite;
+}
+
+.zhInline {
+  color: var(--ink-faint);
+}
+
+@keyframes driftA {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(18px, 14px, 0);
+  }
+}
+
+@keyframes driftB {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-16px, -18px, 0);
+  }
+}
+
+@keyframes driftC {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-14px, 18px, 0) scale(1.04);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1180px) {
+  .menu {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .menuSocials {
+    grid-column: 1 / -1;
+  }
+
+  .hero,
+  .showreelSection,
+  .excerptSection,
+  .methodSection,
+  .contactSection {
+    grid-template-columns: 1fr;
+  }
+
+  .caseRow {
+    grid-template-columns: 78px 180px minmax(0, 1fr);
+  }
+
+  .caseArrow {
+    justify-content: flex-start;
+  }
+
+  .caseMeta,
+  .poster {
+    grid-column: 2 / -1;
+  }
+}
+
+@media (max-width: 880px) {
+  .menu {
+    display: none;
+  }
+
+  .mobileHeader {
+    position: sticky;
+    top: 0;
+    z-index: 24;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: linear-gradient(180deg, rgba(243, 240, 231, 0.96), rgba(243, 240, 231, 0.78));
+    backdrop-filter: blur(12px);
+  }
+
+  .mobileBrand {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: inherit;
+    text-decoration: none;
+    font-family:
+      var(--signal-font-mono),
+      "IBM Plex Mono",
+      monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .mobileNavLinks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .mobileNavLinks a {
+    color: inherit;
+    text-decoration: none;
+    font-family:
+      var(--signal-font-mono),
+      "IBM Plex Mono",
+      monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .main {
+    padding-top: 22px;
+  }
+
+  .preheader {
+    grid-template-columns: 1fr;
+  }
+
+  .preheaderMeta {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .wordmarkLine {
+    font-size: clamp(3.3rem, 18vw, 6.6rem);
+  }
+
+  .signalGrid,
+  .spotlightMetrics,
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .caseRow {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .caseMeta,
+  .poster {
+    grid-column: auto;
+  }
+
+  .poster {
+    min-height: 180px;
+  }
+
+  .recognitionRow,
+  .timelineRow,
+  .footerTop {
+    grid-template-columns: 1fr;
+  }
+
+  .footerLinks {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 560px) {
+  .menu,
+  .mobileHeader,
+  .main,
+  .footer {
+    width: min(100% - 20px, 1520px);
+  }
+
+  .summaryEn {
+    font-size: 18px;
+  }
+
+  .subtitleToken span:first-child {
+    font-size: 16px;
+  }
+
+  .showreelVisual {
+    min-height: 470px;
+  }
+
+  .signalGrid {
+    padding: 18px;
+    padding-top: 130px;
+  }
+
+  .caseTitleEn {
+    font-size: clamp(1.8rem, 11vw, 3rem);
+  }
+
+  .sectionTitle {
+    font-size: clamp(1.7rem, 10vw, 2.5rem);
+  }
+
+  .excerptStatement {
+    font-size: clamp(2.1rem, 13vw, 3.4rem);
+  }
+}
