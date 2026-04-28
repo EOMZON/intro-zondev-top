@@ -19,6 +19,7 @@ export const introSignalPersonalDocument = signalHomeDocumentSchema.parse({
     ),
     nav: [
       { label: bi('Home', '首页'), href: '#top' },
+      { label: bi('Vision', '愿景'), href: '/vision' },
       { label: bi('LifeOS', 'LifeOS'), href: '#lifeos' },
       { label: bi('Practices', '习惯'), href: '#practice' },
       { label: bi('Works', '作品'), href: '#case-studies' },
@@ -51,16 +52,20 @@ export const introSignalPersonalDocument = signalHomeDocumentSchema.parse({
     ),
     actions: [
       {
+        label: bi('Vision', '人生愿景'),
+        href: '/vision',
+      },
+      {
+        label: bi('Decision OS', '决策系统'),
+        href: '/where-i-win',
+      },
+      {
         label: bi('Current Rhythm', '当前节奏'),
         href: '#lifeos',
       },
       {
         label: bi('Browse Works', '打开作品'),
         href: '#case-studies',
-      },
-      {
-        label: bi('Share a Note', '写信给我'),
-        href: '#contact',
       },
     ],
     heroMetrics: [
